@@ -10,7 +10,7 @@ Today, we are going to create 1 new component, 2 pages, and a routing system to 
 
 Your choice: for this challenge, we have provided the solutions to `news-site-i` in the starting code here. It is up to you whether you would like to use our code or your own code from yesterday.
 
-1. Create a new React app from your terminal: `npx create vite news-site-ii`
+1. Create a new React app from your terminal: `npm create vite news-site-ii`
 
 2. Copy over the `components`, `data`, and `pages` directories from this repo to the `src/` of your new React project. If you would like to use your own code from `news-site-I`, replace the following files in the `components` directories with your files from `news-site-i`: `Article/Article.js`, `ArticleTeaser/ArticleTeaser.js`, and `AppNav/AppNav.js`. 
 
