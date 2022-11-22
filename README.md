@@ -1,14 +1,24 @@
 # News Site Part II
 
+** Note: the structuring of the components here will be a bit different than the code we saw in class. This document describes instructions of what we want to do but you might find that implementing certain functionalities in a different way will work better. 
+** Example: You might want to put the link in the article teaser because that is where our title is, or you might have a function that is handling the click that will return the link tag somewhere else.
+
 ## Initial Setup
-
-** Note: the structuring of the components here will be a bit different than the code we saw in class. This document describes rough instructions of what we want to do but you might find that implementing certain functionalities in a different way will work better. Example: You might want to put the link in the article teaser because that is where our title is, or you might have a function that is handling the click that will return the link tag somewhere else.
-
 Each day of the News Site app will build on the previous day's code.
 
 Today, we are going to create 1 new component, 2 pages, and a routing system to build up News Site II. A large majority of this code has already been written for you either here or in the previous day's code. We'll be moving quite a bit of code from one place to another.
 
+The goal of this exercise is to:
+
+1. put the list of articles in an `ArticleList` component
+
+2. create a `HomePage` and an `ArticlePage` component and add routing
+
+3. Edit the click handler on the article teaser to reroute to the `ArticlePage` and display more info about the article that was clicked on 
+
 Your choice: for this challenge, we have provided the solutions to `news-site-i` in the starting code here. It is up to you whether you would like to use our code or your own code from yesterday.
+
+### Set up
 
 1. Create a new React app from your terminal: `npm create vite news-site-ii`
 
@@ -35,11 +45,11 @@ onClick={(event) => {
 
 
 ## Component I: ArticleList
-We have a new component today that has been stubbed out: the `ArticleList` component. Instead of showing a random article, we want our homepage to show a list of article teasers. Your mission is to handle the `props` that are being passed in appropriately and create the content that the component should render.
+Currently, this code is showing us a random article, we want our homepage to show a list of article teasers. Your mission is to handle the `props` that are being passed in appropriately and create the content that the component should render.
 
 Props for `ArticleList`:
 1. `articles` - an array of article objects
-2. `handleTitleClick` - a function
+2. `handleTitleClick` - a function (this function could alternately be defined inside `ArticleList`)
 
 The `ArticleList` component will receive an array of `articles` (if you want a refresher on the data shape, take a look at `src/data/news.json`). `map` over this array and create an array of `ArticleTeaser`s. When you `map` over the `articles` array, it's good to use arrow functions. Take a look at what your `ArticleTeaser` component requires (you may want to utilize the [spread operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax)):
 - id (how can you use the indexes of the articles array to act as IDs?)
@@ -136,9 +146,8 @@ import {Link} from "react-router-dom";
 Write the code necessary to find the news article and pass it into the `Article` component and render it all out on the screen. The Article page should render the article's:
 - Title
 - Created Date
-- Byline
-- Image (Note: Someone changed the data structure that we are receiving for news articles. Look inside the JSON and see if you can find the URL for the images. Then, update your code to account for this)
-- Abstract
+- Author
+- object ID
 
 As of right now, keep in mind that people are able to actually hit `/articles/0`, which is not REST-ful - all IDs should start at 1. How can we alter the code to both get the correct article in the JSON file and be REST-ful?
 

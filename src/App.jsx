@@ -18,10 +18,10 @@ function App() {
   const [article, setArticle] = useState({
     id: randomArticleIndex,
     title: randomArticle.title,
-    abstract: randomArticle.abstract,
-    byline: randomArticle.byline,
-    image: randomArticle.multimedia.length ? randomArticle.multimedia[0].url : null,
-    created_date: randomArticle.created_date
+    url: randomArticle.url,
+    author: randomArticle.author,
+    created_date: randomArticle.created_at,
+    object_id: randomArticle.objectID
   })
 
   // renders
