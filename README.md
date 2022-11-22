@@ -2,7 +2,7 @@
 
 ## Initial Setup
 
-** Note: the structuring of the components here will be a bit different than the code we saw in class. This document describes rough instructions of we want to do but you might find that implementing certain functionalities in a different way will work better. Example: You might want to put the link in the article teaser because that is where our title is, or you might have a function that is handling the click that will return the link tag somewhere else.
+** Note: the structuring of the components here will be a bit different than the code we saw in class. This document describes rough instructions of what we want to do but you might find that implementing certain functionalities in a different way will work better. Example: You might want to put the link in the article teaser because that is where our title is, or you might have a function that is handling the click that will return the link tag somewhere else.
 
 Each day of the News Site app will build on the previous day's code.
 
