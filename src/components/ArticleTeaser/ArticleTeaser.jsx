@@ -1,11 +1,11 @@
 function ArticleTeaser(props) {
 
-  const {id, title, created_date, handleTitleClick } = props
+  const { objectID, title, created_at, handleTitleClick } = props
   
   return (
     <div>
-      <a onClick={ () => handleTitleClick(id) }>{ title }</a>
-      <p>{ created_date }</p>
+      <h2><a href="#" onClick={ () => handleTitleClick(objectID) }>{ title }</a></h2>
+      <p>{ created_at }</p>
     </div>
   )
 }

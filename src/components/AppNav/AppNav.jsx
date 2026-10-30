@@ -3,8 +3,8 @@ function AppNav(props) {
   return (
     <nav>
     {
-      props.navItems.map((navItem) =>
-        <a href="#" onClick={ () => props.handleNavClick(navItem.value)} >
+      props.sections.map((navItem) =>
+        <a key={navItem.label} href="#" onClick={ () => props.handleNavClick(navItem.label)} >
           { navItem.label } |
         </a>
       )
