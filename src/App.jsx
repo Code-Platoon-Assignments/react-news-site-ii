@@ -2,7 +2,7 @@ import './App.css';
 import { useState } from "react"
 // data
 import News from './data/news.json';
-import navItemsData from './data/navItems.json';
+import sectionsData from './data/sections.json';
 // components
 import AppNav from './components/AppNav/AppNav.jsx';
 import ArticleTeaser from './components/ArticleTeaser/ArticleTeaser.jsx'
@@ -14,14 +14,13 @@ const randomArticle = News[randomArticleIndex];
 
 function App() {
   // states
-  const [navItems, setNavItems] = useState(navItemsData)
+  const [sections, setSections] = useState(sectionsData)
   const [article, setArticle] = useState({
-    id: randomArticleIndex,
+    objectID: randomArticle.objectID,
     title: randomArticle.title,
+    created_at: randomArticle.created_at,
     url: randomArticle.url,
-    author: randomArticle.author,
-    created_date: randomArticle.created_at,
-    object_id: randomArticle.objectID
+    author: randomArticle.author
   })
 
   // renders
@@ -30,15 +29,15 @@ function App() {
       <h1>AppNav Component</h1>
       <hr />
 
-      <AppNav navItems={navItems} handleNavClick={(clickedItem) => { console.log(clickedItem) }} />
+      <AppNav sections={sections} handleNavClick={(clickedItem) => { console.log(clickedItem) }} />
 
       <h1>ArticleTeaser Component</h1>
       <hr />
 
       <ArticleTeaser
-        id={article.id}
+        objectID={article.objectID}
         title={article.title}
-        created_date={article.created_date}
+        created_at={article.created_at}
         handleTitleClick={(articleID) => { console.log(articleID) }} />
 
       <h1>Article Component</h1>
